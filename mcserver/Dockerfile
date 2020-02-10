@@ -13,9 +13,6 @@ EXPOSE 19132
 # Create user
 RUN mkdir /home/minecraft
 
-# Copy start shell file
-ADD start.sh /home/minecraft/start.sh
-
 # Copy server properties
 ADD server.properties /home/minecraft/server.properties
 
@@ -25,5 +22,8 @@ VOLUME /minecraft_data /home/minecraft
 # Set runtime workdir
 WORKDIR /home/minecraft
 
+# Fetch file
+RUN curl -o nukkit-1.0-SNAPSHOT.jar https://ci.nukkitx.com/job/NukkitX/job/Nukkit/job/master/lastSuccessfulBuild/artifact/target/nukkit-1.0-SNAPSHOT.jar
+
 # Run start script
-CMD [ "/bin/bash", "/home/minecraft/start.sh" ]
+CMD [ "java -jar", "nukkit-1.0-SNAPSHOT.jar" ]
