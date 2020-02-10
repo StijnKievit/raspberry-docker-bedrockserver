@@ -19,7 +19,7 @@ EXPOSE 19132
 USER minecraft:minecraft
 
 # Copy files over
-COPY mcserver /home/minecraft
+ADD mcserver /home/minecraft
 
 # Volumes
 VOLUME /minecraft_data /home/minecraft
