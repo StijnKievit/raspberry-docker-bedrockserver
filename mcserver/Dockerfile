@@ -11,10 +11,7 @@ RUN apt-get install openjdk-8-jre -y
 EXPOSE 19132
 
 # Create user
-RUN useradd -ms /bin/bash minecraft
-
-# Set active user
-USER minecraft
+RUN mkdir /home/minecraft
 
 # Copy start shell file
 ADD start.sh /home/minecraft/start.sh
