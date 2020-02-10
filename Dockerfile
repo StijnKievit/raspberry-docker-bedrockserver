@@ -28,4 +28,4 @@ VOLUME /minecraft_data /home/minecraft
 WORKDIR /home/minecraft
 
 # Run command
-CMD ["/bin/bash", "start.sh"]
+CMD ["/bin/bash", "/home/minecraft/start.sh"]
