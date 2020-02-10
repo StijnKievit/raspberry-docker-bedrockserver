@@ -29,7 +29,5 @@ VOLUME /minecraft_data /home/minecraft
 WORKDIR /home/minecraft
 
 #test
-#CMD ["/bin/bash", "ls -l"]
 
 # Run command
-#CMD ["/bin/bash", "start.sh"]
