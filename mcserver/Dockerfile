@@ -25,10 +25,13 @@ copy start.sh /home/minecraft/
 copy server.properties /home/minecraft/
 
 # Volumes
-VOLUME /minecraft_data /home/minecraft
+VOLUME /minecraft_data /home/minecraft/
 
 # Set runtime workdir
-WORKDIR /home/minecraft
+WORKDIR /home/minecraft/
+
+#test
+CMD ["/bin/bash", "ls -l"]
 
 # Run command
-CMD ["/bin/bash", "/home/minecraft/start.sh"]
+CMD ["/bin/bash", "start.sh"]
