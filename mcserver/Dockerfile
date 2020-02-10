@@ -18,8 +18,11 @@ EXPOSE 19132
 # User and group to run as
 USER minecraft:minecraft
 
-# Copy files over
-ADD mcserver /home/minecraft
+# Copy start shell file
+copy start.sh /home/minecraft/
+
+# Copy server properties
+copy server.properties /home/minecraft/
 
 # Volumes
 VOLUME /minecraft_data /home/minecraft
