@@ -8,25 +8,25 @@ RUN apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt
 RUN apt-get install openjdk-8-jre -y
 
 # Create user
-RUN useradd -m minecraft
+RUN useradd -ms /bin/bash minecraft
 
 # Expose minecraft ports
 EXPOSE 19132
 
 # User and group to run as
-USER minecraft:minecraft
+USER minecraft
 
 # Copy start shell file
-ADD ./start.sh /home/minecraft/
+ADD start.sh /home/minecraft
 
 # Copy server properties
-ADD ./server.properties /home/minecraft/
+ADD server.properties /home/minecraft
 
 # Volumes
-VOLUME /minecraft_data /home/minecraft/
+VOLUME /minecraft_data /home/minecraft
 
 # Set runtime workdir
-WORKDIR /home/minecraft/
+WORKDIR /home/minecraft
 
 #test
 CMD ["/bin/bash", "ls -l"]
