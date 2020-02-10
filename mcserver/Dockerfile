@@ -7,14 +7,8 @@ RUN apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt
 #install openjdk
 RUN apt-get install openjdk-8-jre -y
 
-# Create usergroup
-RUN groupadd minecraft
-
 # Create user
 RUN useradd -m minecraft
-
-# Add user to group
-RUN usermod -a -G minecraft minecraft
 
 # Expose minecraft ports
 EXPOSE 19132
