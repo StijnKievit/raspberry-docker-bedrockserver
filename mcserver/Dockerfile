@@ -16,11 +16,14 @@ EXPOSE 19132
 # User and group to run as
 USER minecraft
 
+#force creation of folder
+RUN mkdir /home/minecraft
+
 # Copy start shell file
-ADD start.sh /home/minecraft
+COPY start.sh /home/minecraft
 
 # Copy server properties
-ADD server.properties /home/minecraft
+COPY server.properties /home/minecraft
 
 # Volumes
 VOLUME /minecraft_data /home/minecraft
@@ -28,6 +31,5 @@ VOLUME /minecraft_data /home/minecraft
 # Set runtime workdir
 WORKDIR /home/minecraft
 
-#test
-
-# Run command
+# Run start script
+CMD [ "/bin/bash", "/home/minecraft/start.sh" ]
