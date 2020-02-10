@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nukkit:
+    build: ./
+    ports:
+      - "19132:19132"
+      - "19132:19132/udp"
+    volumes:
+      - ./minecraft_data:/home/minecraft
