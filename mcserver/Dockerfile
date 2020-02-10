@@ -19,6 +19,9 @@ USER minecraft
 # Copy start shell file
 ADD start.sh /home/minecraft
 
+# make executable
+RUN chmod +x /home/minecraft/start.sh
+
 # Copy server properties
 ADD server.properties /home/minecraft
 
