@@ -5,7 +5,7 @@ FROM balenalib/raspberry-pi-debian:latest
 RUN apt-get update -y && apt-get full-upgrade -y && apt-get autoremove -y && apt-get clean -y
 
 #install openjdk
-RUN apt-get install openjdk-8-jre
+RUN apt-get install openjdk-8-jre -y
 
 # Create minecraft user
 RUN useradd --user-group \
