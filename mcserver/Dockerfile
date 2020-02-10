@@ -19,10 +19,10 @@ EXPOSE 19132
 USER minecraft:minecraft
 
 # Copy start shell file
-copy start.sh /home/minecraft/
+ADD ./start.sh /home/minecraft/
 
 # Copy server properties
-copy server.properties /home/minecraft/
+ADD ./server.properties /home/minecraft/
 
 # Volumes
 VOLUME /minecraft_data /home/minecraft/
